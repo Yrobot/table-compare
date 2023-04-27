@@ -7,5 +7,9 @@
     "start": "bun ./index.ts"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "exceljs": "^4.3.0"
+  }
 }
