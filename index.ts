@@ -34,9 +34,10 @@ const formatTitle = (title: string) => title.trim().toLocaleLowerCase();
   const sheet1 = await config[0].getSheet(config[0].path);
   const sheet2 = await config[1].getSheet(config[1].path);
 
-  const titles1 = sheet1.getColumn(5).values.slice(2);
+  const titles1 = sheet1.getColumn(2).values.slice(2);
 
   titles1.forEach((title, i) => {
+    // if (i < 5) console.log(title);
     map[formatTitle(title)] = true;
   });
 
@@ -45,7 +46,10 @@ const formatTitle = (title: string) => title.trim().toLocaleLowerCase();
       result.push(row.values);
       return;
     }
-    const title = row.values[3];
+    const title = row.values[2];
+
+    // if (i < 5) console.log(title);
+
     if (!map[formatTitle(title)]) {
       result.push(row.values);
     }
